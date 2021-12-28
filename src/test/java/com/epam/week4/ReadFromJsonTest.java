@@ -1,3 +1,5 @@
+package com.epam.week4;
+
 import com.epam.week4.JsonCommand;
 import com.epam.week4.ReadJson;
 
