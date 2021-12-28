@@ -1,0 +1,12 @@
+{
+	"Version": 1.2,
+	"Exceptions": {
+		"type": "findFlower",
+		"message":"Cannot find this kind flower, you can find another"
+	},
+	"flowers":[
+		{"Name": "Rose", "Price":23.39},
+		{"Name":"Osmanthus","Price":45.65},
+		{"Name":"Chrsanthemum","Price":32.98}
+	]
+}
