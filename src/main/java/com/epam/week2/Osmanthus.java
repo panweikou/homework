@@ -9,8 +9,8 @@ public class Osmanthus extends Flower{
     }
 
     @Override
-    public void eat() {
-        System.out.println("Osmanthus can eat!");
+    public void smell() {
+        System.out.println("Osmanthus smell very good!");
     }
 
 

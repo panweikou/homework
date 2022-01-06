@@ -3,8 +3,6 @@ import com.epam.week2.Flower;
 import java.util.Scanner;
 
 public class FlowerMethod {
-    public FlowerMethod() {
-    }
 
     /**
      * Get the price of the flowers

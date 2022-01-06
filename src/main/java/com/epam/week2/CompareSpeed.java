@@ -2,9 +2,10 @@ package com.epam.week2;
 
 import java.io.*;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class CompareSpeed {
-    public CompareSpeed() {}
+    Logger logger= java.util.logging.Logger.getLogger(CompareSpeed.class.getName());
 
     /**
      * Add the elements to the ArrayList and LinkList
@@ -16,12 +17,19 @@ public class CompareSpeed {
         FileReader reader = new FileReader(file);
         BufferedReader br = new BufferedReader(reader);
         List<String> list = new ArrayList<String>();
-        String string = null;
-        while ((string = br.readLine()) !=null) {
-            list.add(string);
+        try {
+            String string = null;
+            while ((string = br.readLine()) !=null) {
+                list.add(string);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            br.close();
+            reader.close();
+
         }
-        br.close();
-        reader.close();
         return list;
     }
 
@@ -39,9 +47,9 @@ public class CompareSpeed {
             }
         }
         if(searchfind == true) {
-            System.out.println("Find it");
+            logger.info("Find the list");
         } else {
-            System.out.println("Cannot find it");
+            logger.info("Cannot find the list");
         }
     }
 
@@ -50,7 +58,6 @@ public class CompareSpeed {
      * @param list
      */
     public void delListElement(List<String> list,String element) {
-        Iterator<String> it = list.listIterator();
         for(int i=0;i<list.size();i++) {
             if(list.get(i).contains(element)) {
                 list.remove(i);
@@ -66,11 +73,22 @@ public class CompareSpeed {
         BufferedReader br = new BufferedReader(reader);
         LinkedList<String> linkedList = new LinkedList<String>();
         String string = null;
-        while ((string = br.readLine()) !=null) {
-            linkedList.add(string);
+        try {
+            while ((string = br.readLine()) !=null) {
+                linkedList.add(string);
+            }
+
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
         }
-        br.close();
-        reader.close();
+        finally {
+            br.close();
+            reader.close();
+        }
         return linkedList;
     }
 
@@ -80,11 +98,12 @@ public class CompareSpeed {
     public void compareTime(long time1, long time2, String type1, String type2, String options) {
         long compareTime = time1 - time2;
         if(compareTime>0) {
-            System.out.println(options+" elements for the "+type1+" spends much more time than "+type2);
+            String msg = options+"elements for the"+type1+"spends much more time than "+type2;
+            logger.info(msg);
         } else if(compareTime==0){
-            System.out.println(options+" elements for the "+type1+" spends equal to "+type2);
+            logger.info(options+" elements for the "+type1+" spends equal to "+type2);
         } else {
-            System.out.println(options+" elements for the "+type1+" spends less time than "+type2);
+            logger.info(options+" elements for the "+type1+" spends less time than "+type2);
         }
     }
 
@@ -97,11 +116,17 @@ public class CompareSpeed {
         BufferedReader br = new BufferedReader(reader);
         Set<String> hashSet = new HashSet<String>();
         String string = null;
-        while ((string = br.readLine()) !=null) {
-            hashSet.add(string);
+        try {
+            while ((string = br.readLine()) !=null) {
+                hashSet.add(string);
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            br.close();
+            reader.close();
         }
-        br.close();
-        reader.close();
         return hashSet;
     }
 
@@ -118,9 +143,9 @@ public class CompareSpeed {
             }
         }
         if(findit==true) {
-            System.out.println("find it");
+            logger.info("find the hash");
         } else {
-            System.out.println("Cannot find it");
+            logger.info("Cannot find the hash");
         }
     }
 
@@ -131,7 +156,7 @@ public class CompareSpeed {
         Iterator<String> it = set.iterator();
         while (it.hasNext()) {
             if(it.next().contains(search)) {
-                System.out.println("Delete successfully");
+                logger.info("Delete successfully");
                 it.remove();
                 break;
             }
@@ -146,11 +171,16 @@ public class CompareSpeed {
         BufferedReader br = new BufferedReader(reader);
         Map<String,String> hashMap= new HashMap<String,String>();
         String string = null;
-        while ((string = br.readLine()) !=null) {
-            hashMap.put(string,string);
+        try {
+            while ((string = br.readLine()) !=null) {
+                hashMap.put(string,string);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            br.close();
+            reader.close();
         }
-        br.close();
-        reader.close();
         return hashMap;
     }
 
@@ -167,9 +197,9 @@ public class CompareSpeed {
           }
       }
         if(find == true) {
-            System.out.println("Find it");
+            logger.info("Find it map");
         } else {
-            System.out.println("Cannot find it");
+            logger.info("Cannot find map");
         }
     }
 
@@ -181,7 +211,7 @@ public class CompareSpeed {
         while (iterator.hasNext()){
             if(iterator.next().contains(search)) {
                 iterator.remove();
-                System.out.println("delete it successfully");
+                logger.info("delete it successfully");
                 break;
             }
         }
@@ -190,12 +220,7 @@ public class CompareSpeed {
 
     public void listshow(List<String> list) {
         for(int i =0;i<list.size();i++) {
-            System.out.println(list.get(i));
+            logger.info(list.get(i));
         }
     }
-
-
-
-
-
 }

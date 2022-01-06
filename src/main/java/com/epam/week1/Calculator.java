@@ -1,8 +1,10 @@
 package com.epam.week1;
+
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Calculator {
-    public Calculator () {}
+    Logger logger= java.util.logging.Logger.getLogger(Calculator.class.getName());
 
 
     /**
@@ -44,7 +46,7 @@ public class Calculator {
      */
     public double division(double a, double b) {
         if(b==0.0) {
-            System.out.println("Please re-enter the second data again: ");
+            logger.info("Please re-enter the second data again: ");
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
             b = Double.parseDouble(input);
@@ -55,24 +57,24 @@ public class Calculator {
 
     public void calculate() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the first number: ");
+        logger.info("Please enter the first number: ");
         String input = sc.nextLine();
         double a = Double.parseDouble(input);
         while (true) {
             //Input the symbol
-            System.out.println("Please enter the symbol: ");
+            logger.info("Please enter the symbol: ");
             String symbol = sc.nextLine();
             if (symbol.equals("=")) {
-                System.out.println("The program is end");
+                logger.info("The program is end");
                 break;
             }
             if(!(symbol.equals("+")||symbol.equals("-")||symbol.equals("*")||symbol.equals("/"))) {
-                System.out.println("Please the correct symbol + - * /");
+                logger.info("Please the correct symbol + - * /");
                 continue;
             }
 
             //Input the second number
-            System.out.println("Please enter the second number: ");
+            logger.info("Please enter the second number: ");
             String input1 = sc.nextLine();
             double b = Double.parseDouble(input1);
             switch (symbol) {
@@ -89,8 +91,8 @@ public class Calculator {
                     a = this.division(a,b);
                     break;
             }
-            System.out.println(a);
-
+            String value = String.valueOf(a);
+            logger.info(value);
         }
     }
 

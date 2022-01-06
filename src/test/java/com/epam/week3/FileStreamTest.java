@@ -3,13 +3,16 @@ package com.epam.week3;
 import com.epam.week2.Flower;
 import com.epam.week2.Rose;
 
+import javax.imageio.IIOException;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class FileStreamTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         FileStream fileStream = new FileStream();
         //Write the flower name and price to the text
         fileStream.writeFile("flowers.txt");
         String str = fileStream.readFile("flowers.txt");
-
         System.out.println("***************************************");
         //Read the data and set it to the flower.
         String[] fl = new String[4];

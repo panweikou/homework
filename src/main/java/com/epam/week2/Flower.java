@@ -39,8 +39,8 @@ public abstract class Flower implements IFlower{
 
 
     @Override
-    public void eat() {
-        System.out.println("I am the parent");
+    public void smell() {
+        System.out.println("I smell very good");
     }
 
     @Override

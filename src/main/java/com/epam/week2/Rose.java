@@ -8,7 +8,7 @@ public class Rose extends Flower {
     }
 
     @Override
-    public void eat() {
-        System.out.println("Rose can eat!");
+    public void smell() {
+        System.out.println("Rose smell very good!");
     }
 }

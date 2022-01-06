@@ -4,13 +4,10 @@ package com.epam.week2;
 public class FlowerTest {
     public static void main(String[] args) {
         IFlower iFlower = new Osmanthus();
-        iFlower.eat();
+        iFlower.smell();
 
-        IFlower iFlower1 = new Chrysanthemum();
-        iFlower1.eat();
-
-        IFlower iFlower3 = new Rose();
-        iFlower3.eat();
+        IFlower iFlower2 = new Perfume();
+        iFlower2.smell();
 
         System.out.println("=========================================================");
         /**
@@ -45,6 +42,8 @@ public class FlowerTest {
                 case 2:
                     flowers[i]=flower2;
                     Rose+=1;
+                    break;
+                default:
                     break;
             }
         }

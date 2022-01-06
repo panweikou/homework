@@ -8,7 +8,6 @@ import com.epam.week2.Rose;
 import java.util.List;
 
 public class FlowerGet {
-    public FlowerGet() {}
 
     public String getName(List<String> list) {
         String str ="";

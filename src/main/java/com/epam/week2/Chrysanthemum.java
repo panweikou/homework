@@ -1,6 +1,9 @@
 package com.epam.week2;
 
+import java.util.logging.Logger;
+
 public class Chrysanthemum extends Flower{
+    Logger logger= java.util.logging.Logger.getLogger(Chrysanthemum.class.getName());
 
     public Chrysanthemum() {}
 
@@ -9,8 +12,8 @@ public class Chrysanthemum extends Flower{
     }
 
     @Override
-    public void eat() {
-        System.out.println("Chrysanthemum can eat!");
+    public void smell() {
+        logger.info("Chrysanthemum smell very good!");
     }
 
 }
