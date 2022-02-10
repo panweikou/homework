@@ -1,2 +1,2 @@
-rose,34.0,
-hehua,23.0,
+Rose,34.0,
+Meigu,87.0,

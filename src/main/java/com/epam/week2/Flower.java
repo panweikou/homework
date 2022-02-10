@@ -1,6 +1,6 @@
 package com.epam.week2;
 
-public abstract class Flower implements IFlower{
+public  class Flower implements IFlower{
     private String flowerName;
     private double price;
 

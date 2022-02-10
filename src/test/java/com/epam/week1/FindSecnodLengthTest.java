@@ -15,6 +15,7 @@ public class FindSecnodLengthTest {
         //Add the same length string to the list
         List<String> list1 = new ArrayList<String>();
         list1.add("helpagain");
+        list1.add("helpagain");
         list1.add("help");
         list1.add("what1");
         list1.add("12345");

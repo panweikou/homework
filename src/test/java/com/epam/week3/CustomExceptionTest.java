@@ -12,7 +12,11 @@ public class CustomExceptionTest {
         //Guess the flower price.
         double price = flower.getPrice();
         FlowerMethod flowerFind = new FlowerMethod();
-        flowerFind.TestFlowerPrice(price);
+        try {
+            flowerFind.TestFlowerPrice(price);
+        } catch (CustomPriceGuessException e) {
+            e.printStackTrace();
+        }
         System.out.println();
 
 
@@ -23,7 +27,11 @@ public class CustomExceptionTest {
         for(int i=0;i<flowers.length;i++) {
             flowers[i] = flower1;
         }
-        flowerFind.SearchFlower(flowers,"osa");
+        try {
+            flowerFind.SearchFlower(flowers,"osa");
+        } catch (CustomFindFlower customFindFlower) {
+            customFindFlower.printStackTrace();
+        }
         System.out.println();
 
 
